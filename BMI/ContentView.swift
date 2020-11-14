@@ -10,12 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView() {
-        VStack() {
-            Text("BMI計算機")
-                .font(.title)
-                .fontWeight(.bold)
-            
-
+            VStack() {
+                Text("BMI計算機")
+                    .font(.title)
+                    .fontWeight(.bold)
                 NavigationLink(destination: BMIInputView()) {Text("はじめる") }
             }
         }

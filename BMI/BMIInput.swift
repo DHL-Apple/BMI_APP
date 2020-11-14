@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct BMIInputView: View {
+    @Environment(\.presentationMode) var presentation
     
     @State var isModal: Bool = false
     var body: some View {
         Button(action: {
             self.isModal = true
         }) {
-            SwiftUI.Text("計算")
+            Text("計算")
         }
         .sheet(isPresented: $isModal) {
             BmiAns()
-        }.navigationBarHidden(true)
-        .navigationBarItems(leading: Text("戻る"))
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: { self.presentation.wrappedValue.dismiss()}) {
+            
+            Text("戻る").font(.title)
+        }.padding())
     }
     
 }

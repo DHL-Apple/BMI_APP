@@ -14,13 +14,13 @@ struct BmiAns: View {
     
     var body: some View {
         VStack {
-        Spacer()
+            Spacer()
             Text("BMI").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold)
-        Spacer()
-        Button(action: { self.presentation.wrappedValue.dismiss()}) {
+            Spacer()
+            Button(action: { self.presentation.wrappedValue.dismiss()}) {
                 
-            Text("OK").font(.title)
-    }.padding()
+                Text("OK").font(.title)
+            }.padding()
         }
     }
 }

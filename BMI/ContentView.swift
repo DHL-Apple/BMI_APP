@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView() {
+        VStack() {
+            Text("BMI計算機")
+                .font(.title)
+                .fontWeight(.bold)
+            
+
+                NavigationLink(destination: BMIInputView()) {Text("はじめる") }
+            }
+        }
     }
 }
 

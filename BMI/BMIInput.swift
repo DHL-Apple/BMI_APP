@@ -9,9 +9,26 @@ import SwiftUI
 
 struct BMIInputView: View {
     @Environment(\.presentationMode) var presentation
-    
+    @State var weight: String = ""
+    @State var height: String = ""
     @State var isModal: Bool = false
+    
+    
     var body: some View {
+        
+        //データのインプット
+        VStack {
+            NumberTextField(title: "体重(kg)", number: $weight)
+            NumberTextField(title: "身長(m)", number: $height)
+        }
+        
+        if (!weight.isEmpty){
+            Text("\(weight)kg")
+        if (!weight.isEmpty){
+            Text("\(height)m")
+        }
+        
+        //計算ボタンの処理
         Button(action: {
             self.isModal = true
         }) {
@@ -36,4 +53,5 @@ struct BMIInputView_Previews: PreviewProvider {
     static var previews: some View {
         BMIInputView()
     }
+}
 }

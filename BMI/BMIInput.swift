@@ -19,13 +19,13 @@ struct BMIInputView: View {
         //データのインプット
         VStack {
             NumberTextField(title: "体重(kg)", number: $weight)
-            NumberTextField(title: "身長(m)", number: $height)
+            NumberTextField(title: "身長(cm)", number: $height)
         }
         
         if (!weight.isEmpty){
             Text("\(weight)kg")
         if (!weight.isEmpty){
-            Text("\(height)m")
+            Text("\(height)cm")
         }
         
         //計算ボタンの処理
@@ -35,7 +35,7 @@ struct BMIInputView: View {
             Text("計算")
         }
         .sheet(isPresented: $isModal) {
-            BmiAns()
+            BmiAns(weight: weight, height: height)
         }.navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: Button(action: { self.presentation.wrappedValue.dismiss()}) {
             

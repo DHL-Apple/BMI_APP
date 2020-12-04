@@ -29,11 +29,13 @@ struct BMIInputView: View {
         }
         
         //計算ボタンの処理
+        let text1 = weight
+            if Double(text1) == nil {
         Button(action: {
             self.isModal = true
         }) {
             Text("計算")
-        }
+        }}
         .sheet(isPresented: $isModal) {
             BmiAns(weight: weight, height: height)
         }.navigationBarBackButtonHidden(true)
